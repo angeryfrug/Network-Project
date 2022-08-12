@@ -1,0 +1,17 @@
+const mongoose = require('mongoose');// require mongoose
+const Schema = mongoose.Schema; // create a shorthand for the mongoose Schema constructor
+
+
+const legendSchema = new Schema({
+    title: String,
+    type: String,
+    fullName: String,
+    passive: String,
+    tact: String,
+    ult: String,
+    description: String,
+  }, {timestamps: false});
+
+const Legend = mongoose.model('legend', legendSchema)
+
+module.exports = Legend
