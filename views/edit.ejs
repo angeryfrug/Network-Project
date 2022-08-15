@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1>Edit specific Legend</h1>
-    <form action="/legend/<%=legends.id%>?_method=PUT" method='post'>
+    <form action="/legend/<%=legends.id%>/edit?_method=PUT" method='POST'>
       Legend: <br>
         <input type="text" name="name" value="<%=legends.name%>"></input> <br>
       Type: <br>
@@ -23,8 +23,10 @@
         <input type="text" name="ult" value="<%=legends.ult%>"></input> <br>
       Description: <br>
         <input type="text" name="description" value="<%=legends.description%>"></input> <br>
+      Image Link: <br>
+        <input type="text" name"img" value="<%=legends.img%>"> <br>
       <input type="submit" value="Update Legends"/>
-    </form>
-
+    </form> <br>
+    <a href="/">Home</a>
   </body>
 </html>

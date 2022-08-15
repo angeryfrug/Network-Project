@@ -15,7 +15,7 @@
           <a href="/legend/<%=legend[i].id %>">
               <%= legend[i].name %>
           </a>
-          <form action="/legend/<%=legend[i].id%>?_method=DELETE" method="delete">
+          <form action="/legend/<%=legend[i].id%>?_method=delete" method="put">
               <input type="submit" value="DELETE"/>
           </form>
       </li>

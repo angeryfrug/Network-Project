@@ -70,13 +70,12 @@ app.listen(PORT, () => console.log( 'Listening on port:', PORT));
   })
 
   // NEW
-  app.get('/newLegend', (req, res) => {
+  app.get('/newlegend', (req, res) => {
     res.render('new.ejs')
   })
 
-  app.post('/legend', (req, res)=>{
+  app.post('/newlegend', (req, res)=>{
     Legend.create(req.body, (error, createdLegend)=>{
-      res.send(createdLegend)
       res.redirect('/');
     });
   });
@@ -91,9 +90,9 @@ app.listen(PORT, () => console.log( 'Listening on port:', PORT));
 
 
   // UPDATE
-  app.put('/Legend/:id', (req, res)=>{
-    Legend.findOneAndUpdate(req.params.id, req.body, {new:true}, (error, updatedLegend)=>{
-      res.redirect('/legend/:id');
+  app.put('/Legend/:id/edit', (req, res)=>{
+    Legend.findByIdAndUpdate(req.params.id, req.body, {new:true}, (error, foundLegend)=>{
+      res.redirect('/legend/' + req.params.id)
     });
   });
 
@@ -102,7 +101,7 @@ app.listen(PORT, () => console.log( 'Listening on port:', PORT));
   // DELETE
   app.delete('/Legend/:id', (req, res)=>{
     Legend.findByIdAndRemove(req.params.id, (error, foundLegend)=>{
-      res.redirect('index.ejs')
+      res.redirect('/')
     })
   })
 
