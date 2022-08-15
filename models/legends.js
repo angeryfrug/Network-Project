@@ -3,7 +3,7 @@ const Schema = mongoose.Schema; // create a shorthand for the mongoose Schema co
 
 
 const legendSchema = new Schema({
-    title: String,
+    name: String,
     type: String,
     fullName: String,
     passive: String,

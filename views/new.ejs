@@ -2,11 +2,24 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/models/legends.js">
+    <link rel="stylesheet" href="/public/master.css">
     <title></title>
   </head>
   <body>
     <h1>New Legend</h1>
-    <a href="/index">Home</a>
-
+    <form action="/" method='post'>
+      Legend: <input type="text" name="name"/> <br>
+      Type: <input type="text" name="type"/> <br>
+      Full Name: <input type="text" name="fullName"/> <br>
+      Passive Ability: <input type="text" name="passive"/> <br>
+      Active Ability: <input type="text" name="tact"/> <br>
+      Ultimate Ability: <input type="text" name="ult"/> <br>
+      Description: <input type="text" name="description"/> <br>
+      <input type="submit" value="Insert Legends"/>
+    </form>
+    <nav>
+        <a href="/">Back to Home</a>
+    </nav>
   </body>
 </html>

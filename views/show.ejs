@@ -2,9 +2,54 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/models/legends.js">
+    <link rel="stylesheet" href="/public/master.css">
     <title></title>
   </head>
   <body>
     <h1>Show specific Legend</h1>
+  <h2>
+    Legend:
+    </h2>
+    <p>
+    <%= legends.name %> <br>
+    </p>
+  <h2>
+    Type:
+    </h2>
+  <p>
+    <%= legends.type %> <br>
+    </p>
+  <h2>
+    Full Name:
+    </h2>
+  <p>
+    <%= legends.fullName %> <br>
+    </p>
+  <h2>
+    Passive Ability:
+    </h2>
+  <p>
+    <%= legends.passive %> <br>
+    </p>
+  <h2>
+    Active Ability:
+    </h2>
+  <p>
+    <%= legends.tact %> <br>
+    </p>
+  <h2>
+    Ultimate Ability:
+    </h2>
+  <p>
+    <%= legends.ult %> <br>
+    </p>
+  <h2>
+    Description:
+    </h2>
+  <p>
+    <%= legends.description %> <br>
+    </p>
+<a href="/legend/<%=legends.id%>/edit">Edit Legend</a>
   </body>
 </html>

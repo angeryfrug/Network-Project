@@ -46,13 +46,6 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 
 
-app.use(express.urlencoded({extended:true}))
-app.use(express.static('public'))
-
-
-
-
-
 //___________________
 // Routes
 //___________________
@@ -67,55 +60,51 @@ app.listen(PORT, () => console.log( 'Listening on port:', PORT));
         legend: allLegends})
     })
   })
-  
-  app.get('/index', (req, res) => {
-    Legend.find({}, (error, allLegends) =>{
-      res.render('index.ejs', {
-        legend: allLegends})
-    })
-  })
 
   // SHOW
   app.get('/Legend/:id', (req, res)=>{
     Legend.findById(req.params.id, (error, foundLegend)=>{
       res.render('show.ejs', {
-        legend: foundLegend})
+        legends: foundLegend})
     })
   })
 
   // NEW
   app.get('/newLegend', (req, res) => {
     res.render('new.ejs')
+  })
+
+  app.post('/legend', (req, res)=>{
     Legend.create(req.body, (error, createdLegend)=>{
-      res.redirect('/');
-    });
-  })
-
-  // app.post('/newLegend', (req, res)=>{
-  //   Legend.create(req.body, (error, createdLegend)=>{
-  //     res.redirect('/');
-  //   });
-  // });
-
-  // EDIT
-  app.get('/Legend/edit/:id', (req, res)=>{
-    Legend.findById(req.params.id, (error, foundLegend)=>{
-      res.render('edit.ejs', {
-        legend: foundLegend})
-    })
-  })
-  app.post('/Legend/edit/:id', (req, res)=>{
-    Legend.findOneAndUpdate({id: req.params.id}, (error, foundLegend)=>{
+      res.send(createdLegend)
       res.redirect('/');
     });
   });
 
+  // EDIT
+  app.get('/Legend/:id/edit', (req, res)=>{
+    Legend.findById(req.params.id, (error, foundLegend)=>{
+      res.render('edit.ejs', {
+        legends: foundLegend})
+    })
+  })
+
 
   // UPDATE
+  app.put('/Legend/:id', (req, res)=>{
+    Legend.findOneAndUpdate(req.params.id, req.body, {new:true}, (error, updatedLegend)=>{
+      res.redirect('/legend/:id');
+    });
+  });
 
 
 
   // DELETE
+  app.delete('/Legend/:id', (req, res)=>{
+    Legend.findByIdAndRemove(req.params.id, (error, foundLegend)=>{
+      res.redirect('index.ejs')
+    })
+  })
 
 
 //___________________

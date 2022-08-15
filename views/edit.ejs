@@ -2,9 +2,29 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/models/legends.js">
+    <link rel="stylesheet" href="/public/master.css">
     <title></title>
   </head>
   <body>
     <h1>Edit specific Legend</h1>
+    <form action="/legend/<%=legends.id%>?_method=PUT" method='post'>
+      Legend: <br>
+        <input type="text" name="name" value="<%=legends.name%>"></input> <br>
+      Type: <br>
+        <input type="text" name="type" value="<%=legends.type%>"></input> <br>
+      Full Name: <br>
+        <input type="text" name="fullName" value="<%=legends.fullName%>"></input> <br>
+      Passive Ability: <br>
+        <input type="text" name="passive" value="<%=legends.passive%>"></input> <br>
+      Active Ability: <br>
+        <input type="text" name="tact" value="<%=legends.tact%>"></input> <br>
+      Ultimate Ability: <br>
+        <input type="text" name="ult" value="<%=legends.ult%>"></input> <br>
+      Description: <br>
+        <input type="text" name="description" value="<%=legends.description%>"></input> <br>
+      <input type="submit" value="Update Legends"/>
+    </form>
+
   </body>
 </html>
