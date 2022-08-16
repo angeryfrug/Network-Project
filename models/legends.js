@@ -10,7 +10,7 @@ const legendSchema = new Schema({
     tact: String,
     ult: String,
     description: String,
-    img: String,
+    img: String
   }, {timestamps: false});
 
 const Legend = mongoose.model('legend', legendSchema)

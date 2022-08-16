@@ -14,7 +14,7 @@
     <p>
     <%= legends.name %> <br>
     </p>
-    <img src="<%=legends.img%>" alt="Picture of <%=legends.name%>">
+    <img src="<%=legends.img%>" alt="Picture of <%=legends.name%>"/>
   <h2>
     Type:
     </h2>
@@ -48,9 +48,12 @@
   <h2>
     Description:
     </h2>
-  <p>
-    <%= legends.description %> <br>
-    </p>
+    <p>
+      <%= legends.description %> <br>
+      </p>
+      <p>
+        <%= legends.img %> <br>
+        </p>
 <a href="/legend/<%=legends.id%>/edit">Edit Legend</a> <br>
 <a href="/">Home</a>
   </body>

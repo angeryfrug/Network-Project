@@ -10,12 +10,12 @@
     <h1>Home</h1>
     <p>--------------------------</p>
 <ul>
-    <% for(let i = 0; i < legend.length; i++){ %>
+    <% for(let i = 0; i < legends.length; i++){ %>
       <li>
-          <a href="/legend/<%=legend[i].id %>">
-              <%= legend[i].name %>
+          <a href="/legend/<%=legends[i].id %>">
+              <%= legends[i].name %>
           </a>
-          <form action="/legend/<%=legend[i].id%>?_method=delete" method="put">
+          <form action="/legend/<%=legends[i].id%>?_method=delete" method="post">
               <input type="submit" value="DELETE"/>
           </form>
       </li>

@@ -57,7 +57,7 @@ app.listen(PORT, () => console.log( 'Listening on port:', PORT));
   app.get('/', (req, res) => {
     Legend.find({}, (error, allLegends) =>{
       res.render('index.ejs', {
-        legend: allLegends})
+        legends: allLegends})
     })
   })
 
