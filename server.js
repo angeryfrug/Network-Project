@@ -96,8 +96,6 @@ app.listen(PORT, () => console.log( 'Listening on port:', PORT));
     });
   });
 
-
-
   // DELETE
   app.delete('/Legend/:id', (req, res)=>{
     Legend.findByIdAndRemove(req.params.id, (error, foundLegend)=>{
