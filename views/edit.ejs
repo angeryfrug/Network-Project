@@ -1,32 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/models/legends.js">
-    <link rel="stylesheet" href="/public/master.css">
+    <%- include ('../partials/head.ejs') %>
     <title></title>
   </head>
   <body>
-    <h1>Edit specific Legend</h1>
+    <div class="title">
+      <h1>Edit <%=legends.name%></h1>
+      <a href="/" class="tag">Home</a>
+    </div>
+    <div class="newForm">
     <form action="/legend/<%=legends.id%>/edit?_method=PUT" method='POST'>
-      Legend: <br>
-        <input type="text" name="name" value="<%=legends.name%>"></input> <br>
-      Type: <br>
-        <input type="text" name="type" value="<%=legends.type%>"></input> <br>
-      Full Name: <br>
-        <input type="text" name="fullName" value="<%=legends.fullName%>"></input> <br>
-      Passive Ability: <br>
-        <input type="text" name="passive" value="<%=legends.passive%>"></input> <br>
-      Active Ability: <br>
-        <input type="text" name="tact" value="<%=legends.tact%>"></input> <br>
-      Ultimate Ability: <br>
-        <input type="text" name="ult" value="<%=legends.ult%>"></input> <br>
-      Description: <br>
-        <input type="text" name="description" value="<%=legends.description%>"></input> <br>
-      Image Link: <br>
-        <input type="text" name="img" value="<%=legends.img%>"></input> <br>
+      Legend: <input type="text" name="name" value="<%=legends.name%>"></input> <br>
+      Type: <input type="text" name="type" value="<%=legends.type%>"></input> <br>
+      Full Name: <input type="text" name="fullName" value="<%=legends.fullName%>"></input> <br>
+      Passive Ability: <input type="text" name="passive" value="<%=legends.passive%>"></input> <br>
+      Active Ability: <input type="text" name="tact" value="<%=legends.tact%>"></input> <br>
+      Ultimate Ability: <input type="text" name="ult" value="<%=legends.ult%>"></input> <br>
+      Description: <input type="text" name="description" value="<%=legends.description%>"></input> <br>
+      Image Link: <input type="text" name="img" value="<%=legends.img%>"></input> <br>
       <input type="submit" value="Update Legends"/>
-    </form> <br>
-    <a href="/">Home</a>
+    </form>
+    </div>
   </body>
 </html>

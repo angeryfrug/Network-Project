@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <link rel="sheet" href="/models/legends.js">
-    <link rel="stylesheet" href="./master.css">
+    <%- include ('../partials/head.ejs') %>
     <title>Legends</title>
   </head>
   <body>
-    <h1>Home</h1>
-<ul>
-    <% for(let i = 0; i < legends.length; i++){ %>
-      <li>
-          <a href="/legend/<%=legends[i].id %>">
-              <%= legends[i].name %>
-          </a>
-          <form action="/legend/<%=legends[i].id%>?_method=delete" method="post">
-              <input type="submit" value="DELETE"/>
-          </form>
-      </li>
-    <% } %>
-</ul>
-<nav>
-  <a href="/newLegend">New Legend</a>
-</nav>
-
+    <div class="header">
+      <h1>APEX LEGENDS</h1>
+      <nav>
+        <a href="/newLegend">CREATE A LEGEND</a>
+      </nav>
+    </div>
+    <div class="legends">
+    <ul>
+      <% for(let i = 0; i < legends.length; i++){ %>
+        <li>
+            <img src="<%=legends[i].img%>">
+            <a href="/legend/<%=legends[i].id %>">
+                <%= legends[i].name %>
+            </a>
+            <form action="/legend/<%=legends[i].id%>?_method=delete" method="post">
+                <input class="delete" type="submit" value="DELETE"/>
+            </form>
+        </li>
+      <% } %>
+    </ul>
+  </div>
 
   </body>
 </html>

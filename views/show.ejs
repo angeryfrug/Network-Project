@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/models/legends.js">
-    <link rel="stylesheet" href="/public/master.css">
-    <title></title>
+    <%- include ('../partials/head.ejs') %>
+    <title><%=legends.name%></title>
   </head>
   <body>
-    <h1>Show specific Legend</h1>
+    <div class="body">
+      <img src="<%=legends.img%>" alt="Picture of <%=legends.name%>" class="pic"/>
+    <div class="title">
+      <h1>
+        <%= legends.name %> <br>
+        <a href="/legend/<%=legends.id%>/edit" class="tag">Edit Legend</a> <br>
+        <a href="/" class="tag">Home</a>
+      </h1>
+  </div>
+
+  <div class="list">
   <h2>
-    Legend:
+    Type: <br>
+    <%= legends.type %>
     </h2>
-    <p>
-    <%= legends.name %> <br>
-    </p>
-    <img src="<%=legends.img%>" alt="Picture of <%=legends.name%>"/>
   <h2>
-    Type:
+    Full Name: <br>
+    <%= legends.fullName %>
     </h2>
-  <p>
-    <%= legends.type %> <br>
-    </p>
-  <h2>
-    Full Name:
-    </h2>
-  <p>
-    <%= legends.fullName %> <br>
-    </p>
-  <h2>
+  </div>
+
+  <div class="paragraphs">
+  <h1>
     Passive Ability:
-    </h2>
-  <p>
-    <%= legends.passive %> <br>
-    </p>
+    </h1>
   <h2>
+    <%= legends.passive %>
+    </h2>
+  <h1>
     Active Ability:
-    </h2>
-  <p>
-    <%= legends.tact %> <br>
-    </p>
+    </h1>
   <h2>
+    <%= legends.tact %>
+    </h2>
+  <h1>
     Ultimate Ability:
-    </h2>
-  <p>
-    <%= legends.ult %> <br>
-    </p>
+    </h1>
   <h2>
-    Description:
+    <%= legends.ult %>
     </h2>
-    <p>
-      <%= legends.description %> <br>
-      </p>
-<a href="/legend/<%=legends.id%>/edit">Edit Legend</a> <br>
-<a href="/">Home</a>
+  <h1>
+    Description:
+    </h1>
+    <h2>
+      <%= legends.description %>
+      </h2>
+    </div>
+</div>
   </body>
 </html>

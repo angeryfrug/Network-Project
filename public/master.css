@@ -1,8 +1,127 @@
+@media (max-width: 600px) {
 body {
-  display: flex;
+  display: inline-block;
+}
 
 }
-ul {
-  justify-content: space-around;
+
+
+body {
+  display: flex;
+  font-family: 'Oswald', sans-serif;
+}
+
+.header {
+  font-size: 3vw;
+  position: relative;
+  align-items: center;
+  width: 80vw;
+  height: 50vw
+}
+
+.legends {
+  position: relative;
+  margin: 10px;
+  padding: 5px;
+  width: 150vw;
+  height: auto;
+  background: grey;
+  color: grey;
+  align-items: flex-start;
+  font-size: 2vw;
   list-style: none;
+  padding-bottom: 20px;
+  flex-flow: column;
+}
+
+li {
+  background-color: white;
+  padding: 10px;
+  justify-content: center;
+  display: inline-flex;
+  color: white;
+  width: 25vw;
+}
+img {
+  width: auto;
+  justify-content: flex-start;
+}
+a {
+  display: block;
+  width: 80%;
+  height: auto;
+}
+.title {
+  position: relative;
+  margin: 10px;
+  margin-bottom: 0px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 5vh;
+  width: 15vw;
+}
+
+.body{
+  margin: 25px;
+  display: inline-block;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0
+}
+.pic {
+  width: 75%;
+  height: auto;
+  float: left;
+  padding: 10px;
+}
+.list {
+  margin-top: 0px;
+  float: right;
+  width: 15vw;
+  margin-left: 20px
+  font-size: 5vh;
+}
+.paragraphs {
+  margin: 10vw;
+  width: 50vw
+
+}
+.delete {
+  font-size: 2vh;
+
+}
+
+nav {
+  font-size: 5vh;
+}
+h2 {
+  font-size: 4vh;
+}
+
+h1 {
+  font-size: 4vw;
+}
+
+.title {
+  font-size: 4vh;
+}
+
+input {
+   font-size: 5vh;
+   border-radius: 10px;
+}
+
+.newForm {
+  right: 10vw;
+  margin-top: 5vh;
+  margin-left: 5vw;
+  position: relative;
+  float: right;
+  font-size: 5vh;
+  background: grey;
+  padding: 15px;
+  right: 10px;
 }
